@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retos NASA Space Apps 2026</title>
+<style>
+:root{--bg:#080b18;--card:#11172a;--muted:#a7b0ca;--text:#f4f6ff;--accent:#7c5cff;--border:#27304a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#182044 0,#080b18 45%);color:var(--text);font-family:Inter,Arial,sans-serif}
+.container{width:min(1120px,92%);margin:auto}.topbar{padding:24px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.logo{font-weight:800;letter-spacing:.5px}.button{background:var(--accent);color:white;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:700}
+.hero{padding:70px 0 45px}.eyebrow{color:#9e8cff;text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:2px}
+h1{font-size:clamp(36px,6vw,70px);line-height:1.02;margin:15px 0}.hero p{font-size:18px;color:var(--muted);max-width:650px}
+.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin:35px 0 20px}.section-head h2{margin:0;font-size:28px}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}input,select{background:#10162a;color:white;border:1px solid var(--border);padding:14px 16px;border-radius:12px;font-size:15px}input{flex:1;min-width:230px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:linear-gradient(145deg,#151d35,#0e1426);border:1px solid var(--border);border-radius:20px;padding:25px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#6f60c9}
+.number{color:#9e8cff;font-size:13px;font-weight:800}.card h3{font-size:21px;line-height:1.2;margin:12px 0}.card p{color:var(--muted);line-height:1.6;margin:0}.tag{display:inline-block;margin-top:18px;margin-right:6px;padding:6px 10px;background:#25264b;border-radius:999px;font-size:12px;color:#d5d1ff}
+footer{padding:60px 0 35px;color:var(--muted);text-align:center}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.section-head{display:block}.section-head h2{margin-bottom:8px}.hero{padding-top:45px}}
+.empty{color:var(--muted);padding:30px 0}
+</style>
+</head>
+<body>
+<header class="container topbar">
+  <div class="logo">NASA SPACE APPS · 2026</div>
+  <a class="button" href="#retos">Explora los retos</a>
+</header>
+
+<main class="container">
+<section class="hero">
+  <div class="eyebrow">Biblioteca de desafíos</div>
+  <h1>Retos NASA<br>Space Apps 2026</h1>
+  <p>Elige un desafío, reúne a tu equipo y empieza a crear.</p>
+</section>
+
+<section id="retos">
+  <div class="section-head">
+    <div><h2>Explora los retos</h2><p style="color:var(--muted)">Encuentra el desafío que llevará tu creatividad a una nueva frontera.</p></div>
+    <strong id="count">14 desafíos</strong>
+  </div>
+
+  <div class="controls">
+    <input id="search" type="search" placeholder="Busca un reto...">
+    <select id="category">
+      <option value="all">Todos</option>
+      <option value="ciencia">Ciencia</option>
+      <option value="datos">Datos</option>
+      <option value="tecnologia">Tecnología</option>
+      <option value="espacio">Espacio</option>
+      <option value="tierra">Tierra</option>
+      <option value="ia">IA</option>
+      <option value="diseño">Diseño</option>
+    </select>
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" hidden>No encontramos retos con esos criterios.</div>
+</section>
+</main>
+
+<footer class="container">
+  NASA Space Apps 2026 · Universidad Continental<br>
+  14 — 15 noviembre 2026
+</footer>
+
+<script>
+const retos=[
+["Abandonado pero no olvidado: relatos sobre el equipo desechado de la NASA en la Luna y Marte","Crea una experiencia que cuente la historia de equipos que la NASA ha dejado en la Luna, Marte y el espacio profundo, acercando a estudiantes a la tecnología y la ciencia detrás de estas misiones.",["espacio","diseño"]],
+["¡Conviértete en un detective de tendencias del sistema terrestre!","Explora datos de la NASA para identificar, visualizar y analizar cambios en el sistema ambiental de la Tierra, descubriendo qué está cambiando, dónde y en qué medida.",["datos","tierra"]],
+["Construye un simulador de misiones para astronautas principiantes","Diseña un juego o aplicación donde los estudiantes gestionen una base en la Luna o Marte y tomen decisiones sobre energía, alimentos, soporte vital y protección contra la radiación.",["tecnologia","espacio","diseño"]],
+["Explorador de misiones lunares CLPS","Crea una herramienta intuitiva para comparar sitios y fechas de aterrizaje en la Luna, visualizando la posición del Sol y la Tierra para evaluar energía y comunicación.",["espacio","datos"]],
+["Desarrollar software de monitoreo de salud para astronautas en misiones espaciales","Desarrolla un software que recopile indicadores de salud y ayude a los astronautas a monitorear su estado durante misiones espaciales de larga duración.",["tecnologia","espacio"]],
+["Bailando con las SAR","Utiliza datos de radar de la misión NISAR para crear una aplicación interactiva que permita visualizar y comprender cambios en la superficie terrestre, como incendios, terremotos, glaciares o pérdida de humedales.",["datos","tierra","diseño"]],
+["Cambio de enfoque: Adaptación de explotaciones agrícolas con datos de la NASA","Crea una herramienta que combine datos de la NASA con información local para ayudar a los agricultores a explorar estrategias de rotación de cultivos y adaptarse a condiciones ambientales cambiantes.",["datos","tierra"]],
+["Llama en caída libre: información sobre seguridad contra incendios impulsada por IA a partir de datos de combustión en microgravedad","Desarrolla un panel interactivo con IA que organice, resuma e interprete investigaciones de la NASA sobre el comportamiento del fuego en microgravedad para aportar información sobre seguridad contra incendios.",["ia","espacio","datos"]],
+["Armonización de puntos calientes de MODIS y VIIRS","Desarrolla una aplicación web que combine registros de incendios de diferentes sensores satelitales para visualizar patrones históricos, condiciones inusuales y períodos críticos de actividad de quema.",["datos","tierra","tecnologia"]],
+["Identificar ubicaciones en la Tierra análogas a los emplazamientos de bases lunares permanentes y a los de Marte","Utiliza datos abiertos de la NASA y otras agencias espaciales para identificar lugares de la Tierra con características similares a la Luna o Marte que puedan servir como análogos para futuras misiones.",["tierra","espacio","datos"]],
+["Guía de supervivencia interplanetaria: Mapa de Marte","Crea un mapa interactivo y por capas de Marte que combine datos de diferentes misiones de la NASA para ayudar a los futuros exploradores a planificar rutas y actividades científicas.",["espacio","datos","diseño"]],
+["Planeta X y SPHEREx","Desarrolla una herramienta web que permita explorar las imágenes del cielo obtenidas por SPHEREx y observar cómo diferentes objetos astronómicos cambian de posición con el tiempo.",["espacio","tecnologia"]],
+["Juego de diseño de misiones espaciales","Crea un juego interactivo donde los participantes puedan diseñar y gestionar una misión espacial, tomando decisiones sobre ingeniería, recursos, presupuesto, energía, comunicaciones y órbita.",["espacio","diseño","tecnologia"]],
+["La gramola de información sobre la Tierra","Transforma imágenes de la Tierra del Centro de Información sobre la Tierra de la NASA en experiencias sonoras mediante una interfaz, script o aplicación que genere sonificaciones dinámicas.",["tierra","diseño","tecnologia"]]
+];
+const grid=document.querySelector("#grid"),search=document.querySelector("#search"),category=document.querySelector("#category"),count=document.querySelector("#count"),empty=document.querySelector("#empty");
+function render(){
+ const q=search.value.toLowerCase().trim(),cat=category.value;
+ const filtered=retos.map((r,i)=>({...r,i})).filter(r=>(r[0]+" "+r[1]).toLowerCase().includes(q)&&(cat==="all"||r[2].includes(cat)));
+ grid.innerHTML=filtered.map(r=>`<article class="card"><div class="number">${String(r.i+1).padStart(2,"0")}</div><h3>${r[0]}</h3><p>${r[1]}</p>${r[2].map(t=>`<span class="tag">${t}</span>`).join("")}</article>`).join("");
+ count.textContent=`${filtered.length} desafíos`;empty.hidden=filtered.length!==0;
+}
+search.addEventListener("input",render);category.addEventListener("change",render);render();
+</script>
+</body>
+</html>
