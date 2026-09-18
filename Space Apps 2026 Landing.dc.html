@@ -241,8 +241,6 @@ summary::-webkit-details-marker{display:none}
         </article>
       </sc-for>
     </div>
-    <div style="margin-top:22px;border:1px dashed rgba(185,225,255,0.35);border-radius:20px;padding:22px;font-size:14.5px;line-height:1.6;color:#B0A1CC">Espacio preparado para añadir por sede: mapa, enlace de inscripción, contacto y fotografías. Reemplaza las imágenes en <code style="color:#B9E1FF">/images/sede-*.svg</code> y el mapa en <code style="color:#B9E1FF">/images/mapa-sedes.svg</code>.</div>
-  </div>
 </section>
 
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:38px">
@@ -505,11 +503,11 @@ class Component extends DCLogic {
       retosEstado: retosFiltrados.length + " de " + total + " retos",
       ciudades: ["Lima", "Huancayo", "Ayacucho", "Ica", "Andahuaylas"],
       sedes: [
-        { nombre: "Lima", modalidad: "Presencial", direccion: "Av. Alfredo Mendiola, cerca del óvalo Naranjal, Los Olivos.", img: "images/sede-lima.png", alt: "Campus Los Olivos, sede Lima", href: "Sede.dc.html?sede=lima" },
-        { nombre: "Huancayo", modalidad: "Presencial", direccion: "Av. San Carlos 1980, Urb. San Antonio.", img: "images/sede-huancayo.png", alt: "Campus Huancayo", href: "Sede.dc.html?sede=huancayo" },
-        { nombre: "Ayacucho", modalidad: "Presencial", direccion: "Av. Pérez de Cuéllar 725, cerca del Terminal Terrestre Wari.", img: "images/sede-ayacucho.png", alt: "Campus Ayacucho", href: "Sede.dc.html?sede=ayacucho" },
-        { nombre: "Ica", modalidad: "Presencial", direccion: "Calle C N.º 201, Parque Industrial.", img: "images/sede-ica.png", alt: "Campus Ica", href: "Sede.dc.html?sede=ica" },
-        { nombre: "Andahuaylas", modalidad: "Presencial", direccion: "Dirección por confirmar.", img: "images/sede-andahuaylas.svg", alt: "Fotografía de la sede Andahuaylas", href: "Sede.dc.html?sede=andahuaylas" }
+        { nombre: "Lima", modalidad: "Presencial", direccion: "Av. Alfredo Mendiola, cerca del óvalo Naranjal, Los Olivos.", img: "images/sede-lima.png", alt: "Campus Los Olivos, sede Lima", href: "https://www.spaceappschallenge.org/2026/local-events/lima/" },
+        { nombre: "Huancayo", modalidad: "Presencial", direccion: "Av. San Carlos 1980, Urb. San Antonio.", img: "images/sede-huancayo.png", alt: "Campus Huancayo", href: "https://www.spaceappschallenge.org/2026/local-events/huancayo/ " },
+        { nombre: "Ayacucho", modalidad: "Presencial", direccion: "Av. Pérez de Cuéllar 725, cerca del Terminal Terrestre Wari.", img: "images/sede-ayacucho.png", alt: "Campus Ayacucho", href: "https://www.spaceappschallenge.org/2026/local-events/ayacucho/" },
+        { nombre: "Ica", modalidad: "Presencial", direccion: "Calle C N.º 201, Parque Industrial.", img: "images/sede-ica.png", alt: "Campus Ica", href: "https://www.spaceappschallenge.org/2026/local-events/ica/" },
+        { nombre: "Andahuaylas", modalidad: "Presencial", direccion: "Dirección por confirmar.", img: "images/sede-andahuaylas.svg", alt: "Fotografía de la sede Andahuaylas", href: "https://www.spaceappschallenge.org/2026/local-events/andahuaylas/" }
       ],
       gruposLogos: [
         { titulo: "Organizadores", oscuro: true, claro: false, logos: [logo("logos/logo-nasa.png", "Logo NASA Space Apps"), logo("logos/logo-organizador.png", "Logo Continental International Education")] },
